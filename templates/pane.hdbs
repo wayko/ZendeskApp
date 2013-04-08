@@ -1,0 +1,79 @@
+  <script language="JavaScript">
+<!--
+writeConsole = function(content) {
+ top.consoleRef=window.open('','myconsole',
+  'width=637,height=825'
+   +',menubar=1'
+   +',toolbar=1'
+   +',status=0'
+   +',scrollbars=1'
+   +',resizable=1')
+ top.consoleRef.document.open("text/html","replace");
+ top.consoleRef.document.writeln(
+  '<html><head><title>Signature Page</title>'
++'</head>'
+ +'<body onLoad="self.focus()" style="background: white; font-size: 11px; font-family: Arial, Helvetica, sans-serif">'
+ +'<center><A HREF="javascript:window.print()">Click to Print This Page</A></center>'
+ +'<table width="100%"><tr><td width=50%>'
+ +'<img src="http://www.tcicollege.edu/sites/default/files/tci_favicon.png">College Of Technology</center>'
+ +'</td><td  width=50% align=left>'
+ +'http://www.tcicollege.edu<br />'
++'http://helpdesk.tcicollege.edu<br />'
+ +'212-594-4000<br />'
+ +'</td></tr></table>'
+ +content
+ +'</body></html>'
+ )
+ top.consoleRef.document.close()
+}
+//-->
+</script>
+<form>
+  <input class="createtable"  name=userInput " value="<table width=100% cellpadding=7>
+  <tr>
+    <th colspan=2>CUSTOMER INFORMATION</th>
+  </tr>
+  <tr>
+      <td width=50%><strong>Name</strong>: {{ticket.requester.name}}<br />
+      <strong>Organization</strong>: {{ticket.organization.name}}</td>
+      <td width=50% align=left><strong>Phone</strong>: {{ticket.ticket_field_116678}}<br />
+      <strong>Email</strong>: {{ticket.requester.email}}<br />
+<strong>Student ID</strong>: {{ticket.ticket_field_21306086}}</td>
+  </tr>
+<tr>
+<th colspan=2><strong>COMPUTER INFORMATION:</strong></th>
+</tr>
+<tr>
+<td><strong>Ticket ID#:</strong> {{ticket.id}}<br /><strong>Ticket URL:</strong> {{ticket.url}}<br /></td>
+<td><strong>Serial Number \ Service Tag#:</strong>{{ticket.ticket_field_21139718}}<br /></td>
+</tr>
+<tr>
+<th colspan=2><strong>INITIAL ISSUE</strong></th>
+</tr>
+<tr>
+<td width=100%>{{ticket.ticket_field_102110}}</td><br/>
+</tr>
+<tr>
+<th colspan=4><strong>SOLUTION TAKEN</strong></th>
+</tr>
+<tr>
+<td   height='120px' id='solution'></td>
+<td   height='120px' id='solution1'></td>
+</tr>
+<tr>
+<th colspan=2><strong>SIGNATURE INDICATES AGREEMENT</strong></th>
+</tr>
+<tr>
+<td><br /><br /><iframe src='http://www.dreamcpu.com/signature.html' height='90px' width='275px' frameborder='0'>
+  <p>Your browser does not support iframes.</p>
+</iframe><br />{{ticket.requester.name}}</td>
+<td><br /><br /><hr>Date</td></tr>
+<tr>
+<td><br /><br /><hr>Technician:{{current_user.name}}</td>
+<td><br /><br /><hr>Date</td>
+</tr>
+</table>">
+  <input type=button value="Ticket Signing Sheet"
+onClick="writeConsole(this.form.userInput.value)"
+>
+</form>

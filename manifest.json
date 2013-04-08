@@ -1,0 +1,12 @@
+{
+  "author": {
+    "name": "Jose Ortiz",
+    "email": "jortiz@tcicollege.edu"
+  },
+
+  "location": "ticket_sidebar",
+  "defaultLocale": "en",
+  "private": true,
+  "singleInstall": true,
+  "frameworkVersion": "0.5"
+}
